@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
       localStorage.removeItem("token");
       localStorage.removeItem("name");
       localStorage.removeItem("isAdmin");
-      this.auth.loginFlag = false;
+      this.auth.logedIn = false;
       this.auth.isAdmin = false;
       this.router.navigateByUrl("home");
     },

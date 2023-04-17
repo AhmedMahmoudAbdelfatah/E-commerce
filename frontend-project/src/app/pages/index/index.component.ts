@@ -42,7 +42,8 @@ export class IndexComponent implements OnInit {
   }
 
 
-  addToCart(id: any, index:any) {
+  addToCart(id: any, index: any) {
+    if (!this.auth.logedIn) this.router.navigateByUrl("/login");
     this.cartProducts.push({ product: this.products[index], quantity: 1 });
     this.auth.handlePost("/cart/add", { productId: id }).subscribe(res => {
       console.log(res);

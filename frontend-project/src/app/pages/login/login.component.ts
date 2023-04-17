@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token", res.data.accessToken);
           localStorage.setItem("isAdmin", res.data.user.isAdmin);
           localStorage.setItem("name", res.data.user.name);
-        this.auth.loginFlag = true;
-        this.auth.isAdmin = res.data.user.isAdmin == true ? true : false;
+          this.auth.loginFlag = true;
+          this.auth.isAdmin = res.data.user.isAdmin == true ? true : false;
+          this.auth.logedIn = true;
           this.showSuccess(res.data.user.name);
           this.router.navigateByUrl("home");
         }, err => {

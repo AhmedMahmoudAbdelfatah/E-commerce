@@ -8,6 +8,7 @@ export class AuthService {
   urlPath = "http://localhost:3000"
   public loginFlag = false;
   public isAdmin = false;
+  public logedIn = false;
   constructor(private http: HttpClient) { }
 
   handlePost(endPoint:string, obj:any): Observable<any> {
